@@ -1,11 +1,11 @@
-# HTML Anything — 构建进度追踪
+# HTML Anything - 构建进度追踪
 
 > 持久化任务列表，防止 context 丢失。每完成一项就更新此文件。
 >
 > **当前状态（v5 / 2026-05）**: 75 个 skill 模板（13 类 / 9 大交付场景）· 17 种 coding agent 自动检测（其中 8 种 stdin 协议立即可用，9 种 ACP/pi-rpc 协议适配中）· dev server 默认端口 `:3000`（README / CONTRIBUTING 口径），开发可 `PORT=3021 pnpm dev` 自定义。
 >
 > *以下早期 v1 状态记录保留作为历史，反映项目从 9 个内置模板演进到 75 个 skill 注册表的轨迹。*
-> 最近更新: **全部 11 项任务完成 ✅** — 端到端跑通, dev server 在 :3456
+> 最近更新: **全部 11 项任务完成 ✅** - 端到端跑通, dev server 在 :3456
 
 ## 项目目标
 
@@ -92,7 +92,7 @@ src/
 └── README.md                   ⏳
 ```
 
-## 待办（细化） — 全部 ✅
+## 待办（细化） - 全部 ✅
 
 - [x] task-1 研究 (open-design / markdown-nice / markdown-to-image)
 - [x] task-2 init Next.js 16 + Tailwind v4 + Turbopack
@@ -147,7 +147,7 @@ pnpm dev    # 默认 :3000
 # 或 PORT=3456 pnpm dev
 ```
 
-## v4 升级 (2026-05-11) — 模型选择 + 首次入口流程
+## v4 升级 (2026-05-11) - 模型选择 + 首次入口流程
 
 用户反馈: 首次进来如果没配置过 agent, 应该自动弹框选择 + 配置, 包括能选对应 CLI 的模型.
 
@@ -158,12 +158,12 @@ pnpm dev    # 默认 :3000
   - 新加 `ModelOption` 类型 + `DEFAULT_MODEL` 常量 ("default" → 不传 `--model`, 让 CLI 自己挑)
   - 17 个 agent 全部带 `fallbackModels`, 参考 open-design 的 `apps/daemon/src/agents.ts` 的 evidence-based 列表
   - `DetectedAgent` 暴露 `protocol` + `models` + `unsupported`, 客户端一次拉到所有 picker 数据
-- `src/lib/store.ts` — 新 `agentModels: Record<string, string>` 持久化每个 agent 的最近选择;`AgentInfo` 类型同步加 `protocol/models/unsupported` 字段;persist v2 → v3, 加 `setAgentModel(agent, model)` setter
+- `src/lib/store.ts` - 新 `agentModels: Record<string, string>` 持久化每个 agent 的最近选择;`AgentInfo` 类型同步加 `protocol/models/unsupported` 字段;persist v2 → v3, 加 `setAgentModel(agent, model)` setter
 - `src/components/welcome-modal.tsx`
-  - 新 `ModelPicker` 子组件 — 选中 agent 后渲染圆角 chip 列表, 点击切换并写入 `agentModels[id]`
-  - 新 `PROTOCOL_HINT` — 在 agent card 上加 `stdin · stream` / `positional argv` / `ACP JSON-RPC · 暂未接入` / `pi-rpc · 暂未接入` 标签
+  - 新 `ModelPicker` 子组件 - 选中 agent 后渲染圆角 chip 列表, 点击切换并写入 `agentModels[id]`
+  - 新 `PROTOCOL_HINT` - 在 agent card 上加 `stdin · stream` / `positional argv` / `ACP JSON-RPC · 暂未接入` / `pi-rpc · 暂未接入` 标签
   - 选中 ACP/pi-rpc 时 footer 显红色提示 + "进入编辑器" 按钮 disabled (不阻止用户继续浏览, 但拒绝带未支持 agent 进入流程)
-- `src/lib/use-convert.ts` — `ConvertReq` 加 `model`, payload 中按需 `{model: ...}`, log 行包含模型名
+- `src/lib/use-convert.ts` - `ConvertReq` 加 `model`, payload 中按需 `{model: ...}`, log 行包含模型名
 - `src/components/toolbar.tsx`
   - 从 store 读 `agentModels[selectedAgent]`, 透传到 `run()`
   - agent button 增加 mono 风格 model badge (default 时不显示)
@@ -175,7 +175,7 @@ pnpm dev    # 默认 :3000
 - `POST /api/convert {agent:"claude", model:"haiku", ...}` → spawn argv 末尾确实多出 `--model haiku` ✅
 - 首次访问 (清 localStorage) → modal 自动弹出, 选 agent → 出现 model chip 行 → 选 sonnet → 进入编辑器后 toolbar 显示 `Claude Code [sonnet] ›`
 
-## v3 升级 (2026-05-11) — 全量 code agent 接入
+## v3 升级 (2026-05-11) - 全量 code agent 接入
 
 参考 open-design 的 `apps/daemon/src/agents.ts`,把代理矩阵从 8 → 17:
 
@@ -200,10 +200,10 @@ pnpm dev    # 默认 :3000
 | ⚠️ | pi | `pi` | pi-rpc (Inflection 自有 RPC) | 同上 |
 
 ### 关键改动文件
-- `src/lib/agents/detect.ts` — 加 `AgentProtocol` 类型 (stdin/argv/acp/pi-rpc); 注册 9 个新 agent; claude 加 `openclaw` fallback
-- `src/lib/agents/argv.ts` — 加 `UnsupportedAgentProtocolError`; `buildArgv` 新增 qoder/deepseek 分支 + 6 个 ACP agent + pi 全部抛 friendly error; `parseLine` 处理 qoder envelope + 把 deepseek 视作 plain text (同 aider)
-- `src/lib/agents/invoke.ts` — `protocol:"argv"` 时把 `opts.prompt` 追加到 argv 末尾,并跳过 stdin 写入;捕获 `UnsupportedAgentProtocolError` 转 SSE error event
-- `src/components/welcome-modal.tsx` — `VENDOR_HINT` 加 9 个 vendor (DeepSeek/Cognition/Mature/Moonshot/Inflection/AWS/Kilo/Mistral/Qoder), 每个含 gradient 配色 + 安装命令
+- `src/lib/agents/detect.ts` - 加 `AgentProtocol` 类型 (stdin/argv/acp/pi-rpc); 注册 9 个新 agent; claude 加 `openclaw` fallback
+- `src/lib/agents/argv.ts` - 加 `UnsupportedAgentProtocolError`; `buildArgv` 新增 qoder/deepseek 分支 + 6 个 ACP agent + pi 全部抛 friendly error; `parseLine` 处理 qoder envelope + 把 deepseek 视作 plain text (同 aider)
+- `src/lib/agents/invoke.ts` - `protocol:"argv"` 时把 `opts.prompt` 追加到 argv 末尾,并跳过 stdin 写入;捕获 `UnsupportedAgentProtocolError` 转 SSE error event
+- `src/components/welcome-modal.tsx` - `VENDOR_HINT` 加 9 个 vendor (DeepSeek/Cognition/Mature/Moonshot/Inflection/AWS/Kilo/Mistral/Qoder), 每个含 gradient 配色 + 安装命令
 
 ### 验证
 - `pnpm exec tsc --noEmit` ✅ 0 errors in agents/* and welcome-modal (其它 store/toolbar 错误为 v2 task-list 重构遗留, 与本次无关)
@@ -211,7 +211,7 @@ pnpm dev    # 默认 :3000
 - `POST /api/convert {agent:"hermes",...}` → SSE 立即返回 `{"type":"error","message":"hermes uses the ACP JSON-RPC protocol, which is not yet wired up..."}` ✅
 - `POST /api/convert {agent:"pi",...}` → 未安装时报 `not installed or not on PATH` ✅
 
-## v2 升级 (2026-05-11) — 用户反馈后
+## v2 升级 (2026-05-11) - 用户反馈后
 
 | # | 任务 | 状态 | 说明 |
 |---|------|------|------|
@@ -221,18 +221,18 @@ pnpm dev    # 默认 :3000
 | 15 | 代码 + 预览实时流式 | ✅ | claude 加 --include-partial-messages → 150 deltas (vs 旧 2 chunks); 代码 tab 自动 scroll + ▍ 光标; iframe 320ms 防抖 |
 
 ### 关键改动文件
-- `src/lib/agents/argv.ts` — 加 `--include-partial-messages` 给 claude; 新 `parseLine()` 抽出 delta + meta (model/session/usage/cost/duration/rate_limit)
-- `src/lib/agents/invoke.ts` — emit `meta` / `raw` / `start.promptBytes` 事件
-- `src/lib/use-convert.ts` — 客户端解析 meta, 写入 `stats` (model/tokens/cost/ttfb)
-- `src/lib/store.ts` — 新 `RunStats` + 结构化 `LogEntry` (kind/elapsed/data)
-- `src/components/welcome-modal.tsx` — 新建, 1:1 open-design 风格
-- `src/components/toolbar.tsx` — agent button 改 pill 形式 + 实时 stats
-- `src/components/preview-pane.tsx` — 代码 tab 流式 + 光标; debouncedHtml 320ms; LogPanel 7 色 badge
-- `src/components/template-picker.tsx` — 改成卡片下拉
-- `src/components/export-menu.tsx` — 三段式分组
-- `src/app/globals.css` — 完整 open-design 调色板 + .pill / .btn-primary / .btn-ghost / .btn-ink / .od-card / .pulse-dot / .serif-em
-- `src/app/layout.tsx` — Inter / Inter Tight / Playfair Display / JetBrains Mono 4 套字体
-- `src/app/page.tsx` — 挂载 WelcomeModal, hydration-safe
+- `src/lib/agents/argv.ts` - 加 `--include-partial-messages` 给 claude; 新 `parseLine()` 抽出 delta + meta (model/session/usage/cost/duration/rate_limit)
+- `src/lib/agents/invoke.ts` - emit `meta` / `raw` / `start.promptBytes` 事件
+- `src/lib/use-convert.ts` - 客户端解析 meta, 写入 `stats` (model/tokens/cost/ttfb)
+- `src/lib/store.ts` - 新 `RunStats` + 结构化 `LogEntry` (kind/elapsed/data)
+- `src/components/welcome-modal.tsx` - 新建, 1:1 open-design 风格
+- `src/components/toolbar.tsx` - agent button 改 pill 形式 + 实时 stats
+- `src/components/preview-pane.tsx` - 代码 tab 流式 + 光标; debouncedHtml 320ms; LogPanel 7 色 badge
+- `src/components/template-picker.tsx` - 改成卡片下拉
+- `src/components/export-menu.tsx` - 三段式分组
+- `src/app/globals.css` - 完整 open-design 调色板 + .pill / .btn-primary / .btn-ghost / .btn-ink / .od-card / .pulse-dot / .serif-em
+- `src/app/layout.tsx` - Inter / Inter Tight / Playfair Display / JetBrains Mono 4 套字体
+- `src/app/page.tsx` - 挂载 WelcomeModal, hydration-safe
 
 ## 所有参考的项目地址+原始 query
 

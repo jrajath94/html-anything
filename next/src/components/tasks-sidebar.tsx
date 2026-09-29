@@ -194,7 +194,7 @@ export function TasksSidebar() {
         {filtered.length === 0 ? (
           <div className="px-3 py-6 text-center text-[12px] text-[var(--ink-mute)]">
             {(() => {
-              const intro = t("tasks.empty.intro", { query: "​" }).split("​");
+              const intro = t("tasks.empty.intro", { query: "" }).split("");
               return (
                 <>
                   {intro[0]}

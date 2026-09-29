@@ -29,7 +29,7 @@ example_desc: "把三家竞品的定位、价格、功能、评价转成产品�
 2. Executive takeaway: 3 条最重要判断, 每条必须包含 "so what"。
 3. Positioning map: 用 2×2 象限或坐标图表现竞品定位。坐标轴必须来自用户内容, 不要套模板词。
 4. Competitor cards: 每个竞品一张卡, 包含 target user、core promise、pricing signal、primary strength、visible weakness。
-5. Feature matrix: 行是关键能力, 列是竞品 + "Us / Opportunity"; 用 ✓ / △ / — 表达覆盖度, 并用短注释说明。
+5. Feature matrix: 行是关键能力, 列是竞品 + "Us / Opportunity"; 用 ✓ / △ / - 表达覆盖度, 并用短注释说明。
 6. Pricing / packaging read: 价格层级、免费试用、限制项、企业销售动作。
 7. UX / messaging notes: 从用户材料中抽取 4-6 条可观察细节, 不要泛泛而谈。
 8. Opportunity windows: 3 个机会窗口, 每个包含 why now、target segment、first move、risk。
@@ -41,7 +41,7 @@ example_desc: "把三家竞品的定位、价格、功能、评价转成产品�
 - Feature matrix 必须横向可读; 小屏可变成 stacked cards。
 - 不要做成营销落地页, 不要做成普通文章。
 
-【可选风格模板 — 参考 assets/】
+【可选风格模板 - 参考 assets/】
 根据用户内容选择最贴合的一种, 不要三种混用:
 - `assets/war-room-grid.html`: 默认风格。浅色战情室 / 咨询报告, 适合产品团队、PM、普通商业读者。
 - `assets/radar-map.html`: 深色雷达图 / market intelligence console, 适合安全、AI、开发者工具、平台型竞品。

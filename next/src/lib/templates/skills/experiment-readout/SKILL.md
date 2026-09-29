@@ -40,7 +40,7 @@ example_desc: "把实验假设、样本、指标和结果转成产品决策报�
 - 图表可以用 CSS/SVG/Chart.js; 如果用 Chart.js, canvas 外层必须固定高度。
 - 不要把结果包装得过度确定; 小样本或缺少显著性时必须明确 caveat。
 
-【可选风格模板 — 参考 assets/】
+【可选风格模板 - 参考 assets/】
 根据实验语境选择一种, 不要三种混用:
 - `assets/product-readout.html`: 默认风格。浅色产品实验复盘, 适合 PM / growth / leadership readout。
 - `assets/lab-notebook.html`: 研究实验室 notebook, 适合 early-stage experiment、定性 + 定量混合、需要保留 caveat 的探索实验。

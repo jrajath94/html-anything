@@ -1,6 +1,6 @@
 # 为 HTML Anything 贡献代码
 
-谢谢你愿意贡献。HTML Anything 是一个故意保持小的项目 —— 大部分价值都在**文件**里（skill 文件夹、提示词片段、agent adapter），而不在框架代码里。回报率最高的贡献，通常是一个文件夹、一个 Markdown 文件，或者十行 adapter。
+谢谢你愿意贡献。HTML Anything 是一个故意保持小的项目 -- 大部分价值都在**文件**里（skill 文件夹、提示词片段、agent adapter），而不在框架代码里。回报率最高的贡献，通常是一个文件夹、一个 Markdown 文件，或者十行 adapter。
 
 这份指南告诉你：每种贡献该放在哪个目录，PR 在合并前要过哪些线。
 
@@ -32,11 +32,11 @@ pnpm dev                  # next dev — http://localhost:3000
 pnpm build                # next build，发布前验包
 ```
 
-Node `~20` 与 `pnpm` 是硬要求。macOS、Linux、WSL2 是主路径；纯 Windows 应该能跑，但不是主要目标 —— 跑不通请提 issue。
+Node `~20` 与 `pnpm` 是硬要求。macOS、Linux、WSL2 是主路径；纯 Windows 应该能跑，但不是主要目标 -- 跑不通请提 issue。
 
 push 之前请确保你**至少有一个 coding-agent CLI 登录好了**（`claude login`、`cursor login`、`gemini auth` …），这样才能跑端到端生成。涉及流式或 agent 层的 PR，期望附上截图或日志片段，证明它真的跑通了。
 
-> **关于项目形态的说明。** 这是一个普通的 Next.js 16 App Router 项目 —— 没有 daemon、没有 Electron 壳、没有别的常驻进程。所有事都在 `next dev` 里完成：server route 直接 spawn 本地 CLI，把 stdout 作为 SSE 流回浏览器，浏览器 append 进 iframe `srcdoc`。如果你打算引入一个独立的长期进程，**请先开 discussion**。
+> **关于项目形态的说明。** 这是一个普通的 Next.js 16 App Router 项目 -- 没有 daemon、没有 Electron 壳、没有别的常驻进程。所有事都在 `next dev` 里完成：server route 直接 spawn 本地 CLI，把 stdout 作为 SSE 流回浏览器，浏览器 append 进 iframe `srcdoc`。如果你打算引入一个独立的长期进程，**请先开 discussion**。
 
 ---
 
@@ -98,19 +98,19 @@ example_prompt: |
 
 ### Skill PR 合并标准
 
-1. **文件夹里附真实 `example.html`。** 手写一份 —— agent 才有 target 可抄。没附的 PR 直接打回。
+1. **文件夹里附真实 `example.html`。** 手写一份 -- agent 才有 target 可抄。没附的 PR 直接打回。
 2. **`example.html` 能在浏览器里渲染**（`pnpm dev` → 选这个 skill → ⌘+Enter → 截图）。截图附 PR。
 3. **硬约束写得具体。** "用现代字体" 不是约束。真正的约束长这样："Inter 96 / 64 / 40 / 24 / 16 px 字号梯度，8px 网格，每页最多两个字重"。
 4. **example 里不许有 `lorem ipsum`**。要用占位数据，也得是看起来像真的占位数据。
-5. **slug 用小写 + 连字符** —— `deck-swiss-international`、`social-x-post-card`。和已有的 75 个文件夹保持一致。
+5. **slug 用小写 + 连字符** -- `deck-swiss-international`、`social-x-post-card`。和已有的 75 个文件夹保持一致。
 6. **vendor 进来的作品，必须保留原始 `LICENSE` 和署名**。比如 [`src/lib/templates/skills/deck-guizang-editorial/`](src/lib/templates/skills/deck-guizang-editorial/) 完整保留了 op7418 的 LICENSE 和署名。
 
 ### picker 分组规则
 
 picker 用两个维度组织 skill。**优先用已有的取值**，只有当你的 skill 真的不适合任何已有值时才引入新值：
 
-- **`mode`** —— `prototype` · `deck` · `frame` · `social` · `office` · `doc` · `mockup` · `vfx`
-- **`scenario`** —— `design` · `marketing` · `engineering` · `product` · `finance` · `hr` · `sale` · `personal`
+- **`mode`** -- `prototype` · `deck` · `frame` · `social` · `office` · `doc` · `mockup` · `vfx`
+- **`scenario`** -- `design` · `marketing` · `engineering` · `product` · `finance` · `hr` · `sale` · `personal`
 
 ---
 
@@ -159,7 +159,7 @@ picker 用两个维度组织 skill。**优先用已有的取值**，只有当你
 
 我们对格式不严苛（Prettier on save 就够），但有两条不商量，因为它们直接出现在 prompt 栈和对外 API 里：
 
-1. **TS/TSX 用单引号。** 除非转义太丑，否则字符串一律单引号。仓库已经全员一致 —— 请保持。
+1. **TS/TSX 用单引号。** 除非转义太丑，否则字符串一律单引号。仓库已经全员一致 -- 请保持。
 2. **代码注释一律英文。** 即使你这个 PR 是把某段翻成中文，**代码注释**也保持英文，方便整库 grep。
 
 此外：
@@ -191,7 +191,7 @@ picker 用两个维度组织 skill。**优先用已有的取值**，只有当你
 - 你跑的命令（确切的 `pnpm dev` 调用，或者你点的 UI 按钮）。
 - 选的是哪个 agent CLI（Claude Code? Cursor Agent? …）。
 - 触发的是哪个 skill。
-- 相关的 **server 日志尾部** —— "artifact 没有渲染出来"这类问题，看到 `spawn ENOENT` 或者 CLI 的真实错误，通常 30 秒就能诊断。
+- 相关的 **server 日志尾部** -- "artifact 没有渲染出来"这类问题，看到 `spawn ENOENT` 或者 CLI 的真实错误，通常 30 秒就能诊断。
 - 如果是 UI 问题，附截图。
 
 prompt 栈相关的 bug（"agent 输出了紫色渐变 hero，`SKILL.md` 里明明禁止了"），请把**完整的 assistant message** 贴进来，方便判断是模型违规还是 prompt 写漏了。
@@ -200,7 +200,7 @@ prompt 栈相关的 bug（"agent 输出了紫色渐变 hero，`SKILL.md` 里明�
 
 ## 提问
 
-- 架构问题、设计问题、"这算 bug 还是误用" → [GitHub Discussions](https://github.com/nexu-io/html-anything/discussions)（首选 —— 下一个遇到同样问题的人能搜到）。
+- 架构问题、设计问题、"这算 bug 还是误用" → [GitHub Discussions](https://github.com/nexu-io/html-anything/discussions)（首选 -- 下一个遇到同样问题的人能搜到）。
 - "怎么写一个做 X 的 skill" → 开 discussion。我们回答之后，如果这是一个新的 pattern，会把答案沉淀进这份文档。
 
 ---
@@ -226,7 +226,7 @@ prompt 栈相关的 bug（"agent 输出了紫色渐变 hero，`SKILL.md` 里明�
 
 - **两份 README 的表格都要更新。**
 - 如果你的改动引入了新的贡献入口或新的合并标准，**两份 CONTRIBUTING 都要同步**。
-- **Skill 提示词正文保持源语言。** 不要翻译 `SKILL.md` —— 它是给 agent 读的 prompt 栈的一部分，保持单一源语言能避免提示词 QA 跨语言膨胀。
+- **Skill 提示词正文保持源语言。** 不要翻译 `SKILL.md` -- 它是给 agent 读的 prompt 栈的一部分，保持单一源语言能避免提示词 QA 跨语言膨胀。
 - server 错误消息、文件名、agent 生成的产物文本都是已知短板，除非 PR 明确把它们纳入改动范围。
 
 ---
@@ -235,6 +235,6 @@ prompt 栈相关的 bug（"agent 输出了紫色渐变 hero，`SKILL.md` 里明�
 
 参与贡献即代表你同意：你的贡献以本仓库的 [Apache-2.0 License](LICENSE) 授权。
 
-vendor 进来的第三方作品保留**原始** LICENSE 与署名 —— 每个 `src/lib/templates/skills/<skill>/` 文件夹里的 `LICENSE` / `README.md` 以它为准。最明显的例子是 [`src/lib/templates/skills/deck-guizang-editorial/`](src/lib/templates/skills/deck-guizang-editorial/)，完整保留了 [op7418](https://github.com/op7418) 的原始 LICENSE 与署名。
+vendor 进来的第三方作品保留**原始** LICENSE 与署名 -- 每个 `src/lib/templates/skills/<skill>/` 文件夹里的 `LICENSE` / `README.md` 以它为准。最明显的例子是 [`src/lib/templates/skills/deck-guizang-editorial/`](src/lib/templates/skills/deck-guizang-editorial/)，完整保留了 [op7418](https://github.com/op7418) 的原始 LICENSE 与署名。
 
 [skill]: https://docs.anthropic.com/en/docs/claude-code/skills

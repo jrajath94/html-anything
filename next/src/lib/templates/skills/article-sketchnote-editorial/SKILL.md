@@ -3,7 +3,7 @@ name: article-sketchnote-editorial
 zh_name: "编辑式视觉笔记"
 en_name: "Editorial Sketchnote"
 emoji: "📒"
-description: "把一个概念铸成杂志专题档案——真问题→失败→转折→顿悟→命名, 6 个 layout 模具 + 4 字族对比 + 探案档案细节"
+description: "把一个概念铸成杂志专题档案--真问题→失败→转折→顿悟→命名, 6 个 layout 模具 + 4 字族对比 + 探案档案细节"
 category: article
 scenario: education
 aspect_hint: "1080 × 自适应（竖向长图）"
@@ -19,20 +19,20 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 
 【模板: 编辑式视觉笔记（Editorial Sketchnote）】
 
-【灵魂】把一个**概念**铸成一份编辑式图文档案。读者翻它像翻一本期刊专题——从真问题（专题刊头）→ 失败的尝试（便签批注、档案标签）→ 一句"等等——"的转折（跨栏大标题）→ 看见那个东西（Hero 对开页）→ 名字（Closing 名牌）。
+【灵魂】把一个**概念**铸成一份编辑式图文档案。读者翻它像翻一本期刊专题--从真问题（专题刊头）→ 失败的尝试（便签批注、档案标签）→ 一句"等等--"的转折（跨栏大标题）→ 看见那个东西（Hero 对开页）→ 名字（Closing 名牌）。
 
-**不是博物馆陈列, 是杂志栏目。不是教科书定义, 是探案档案。** 视觉与叙事一起负责, 让读者自己经历"卡住—走不通—翻过去—看见了"的弧线。文字克制, 不点题。
+**不是博物馆陈列, 是杂志栏目。不是教科书定义, 是探案档案。** 视觉与叙事一起负责, 让读者自己经历"卡住-走不通-翻过去-看见了"的弧线。文字克制, 不点题。
 
-【六条公理 — 任一不过, 重做】
+【六条公理 - 任一不过, 重做】
 
-1. **有真问题在前** — 起点是具体的、可触摸的、卡住的问题。不是「什么是 X」, 是「当时的人们用 A、B、C 都不够」。问题必须有裂缝。
-2. **必须有失败** — 路径中至少一次失败（或走偏、半对了）。线性"由此可得"会杀掉张力。
-3. **顿悟在前、命名在后** — 读者先「看到」, 再被告诉「这叫……」。**标题不能出现概念名**。
-4. **「现在」视角** — 每一站是「他/她那一刻能看到什么」, 不是「我们站在 100 年后回望」。后世评价不进画面。
-5. **文字克制, 不点题** — 禁用「你以为你刚才学到了一个概念」「你重新分娩了它」之类的元自指。让叙事张力自己产生发明感。允许诗意余韵（"于是, 你看见了山"）。
-6. **中文母语表达** — 不要翻译腔。动词驱动 / 具体物件 / 口语节奏。禁忌："被 X""进行 X""在...的背景下""随着 X 的发展""该方法在多个维度上展现优势"。
+1. **有真问题在前** - 起点是具体的、可触摸的、卡住的问题。不是「什么是 X」, 是「当时的人们用 A、B、C 都不够」。问题必须有裂缝。
+2. **必须有失败** - 路径中至少一次失败（或走偏、半对了）。线性"由此可得"会杀掉张力。
+3. **顿悟在前、命名在后** - 读者先「看到」, 再被告诉「这叫……」。**标题不能出现概念名**。
+4. **「现在」视角** - 每一站是「他/她那一刻能看到什么」, 不是「我们站在 100 年后回望」。后世评价不进画面。
+5. **文字克制, 不点题** - 禁用「你以为你刚才学到了一个概念」「你重新分娩了它」之类的元自指。让叙事张力自己产生发明感。允许诗意余韵（"于是, 你看见了山"）。
+6. **中文母语表达** - 不要翻译腔。动词驱动 / 具体物件 / 口语节奏。禁忌："被 X""进行 X""在...的背景下""随着 X 的发展""该方法在多个维度上展现优势"。
 
-【六个 layout 模具 — 节奏锁死】
+【六个 layout 模具 - 节奏锁死】
 
 每站必须用**不同的** layout, 节奏才出现：
 
@@ -45,11 +45,11 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 | 05 | 顿悟 / Hero | `.hero` | 蓝色顶边 4px + grid 7fr/5fr; 左大 SVG / 右 pull-quote + drop-cap body |
 | 06 | 命名 / Closing | `.closing` | 米色底 + 双线顶边 + 中心对称 + 巨大 Serif 名 + byline 上下细线 + epilogue |
 
-**节奏铁律**: 开阔（feature）→ 紧（note 错位）→ 紧（archive 横长）→ 爆（cross 200px）→ 开阔（hero）→ 静（closing 中心对称）。不是均匀展开, 是有呼吸的——开阔与紧凑交替, 转折时大爆炸, 最后回到中心对称。
+**节奏铁律**: 开阔（feature）→ 紧（note 错位）→ 紧（archive 横长）→ 爆（cross 200px）→ 开阔（hero）→ 静（closing 中心对称）。不是均匀展开, 是有呼吸的--开阔与紧凑交替, 转折时大爆炸, 最后回到中心对称。
 
 **禁区**：6 个节都是 60-80px margin-top 的均匀间距 = 画廊陈列, 不是漫画分镜, 重排。
 
-【字族对比 — 必须四种同时使用】
+【字族对比 - 必须四种同时使用】
 
 - **Serif** (`Noto Serif SC`)：杂志主标题、mega-name、italic lead、pull-quote
 - **Sans** (`Noto Sans SC`)：正文 body-sans、failed station head、kicker 后文字
@@ -58,7 +58,7 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 
 **任一缺席 = 视觉回到 AI 单一字族的均质感, 灵魂崩**。
 
-【颜色系统 — ≤4 主色】
+【颜色系统 - ≤4 主色】
 
 ```
 --bg:          #FAF7EF   /* 暖米白底 */
@@ -78,25 +78,25 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 
 `kicker / drop-cap / byline / stamp` 是结构必须项。其它按需取用：
 
-- **kicker** — 站点序号 + 类型小字：Mono uppercase 13px + 黑底白字 num 方块 + 36px 短横线
-- **drop-cap** — body 首字：`::first-letter` float left, 96px Serif
-- **lead** — feature 引言：italic 23px Serif + 红色左边线 2px
-- **pull-quote** — hero 关键句：italic 38px Serif + 蓝色边线 4px + 浮动 `\201C` 大引号 100px
-- **strike** — failed body 删除关键词：`text-decoration: line-through` 红色 2.5px
-- **scribble** — note 红笔批注：Caveat 24px + 6deg 旋转 + 红色 + 虚线红边框
-- **stamp** — archive 失败印章：黑底白字 12px Mono + ✕ Serif 64px
-- **verdict** — archive 结案语：italic 19px Serif 红色 + 上虚线分隔
-- **footnote** — note 脚注：Mono 13px + ¹ 上标
-- **byline** — closing 出处：Mono 14px uppercase + letter-spacing 0.18em + 上下细黑线
-- **mega** — cross 转折爆点：Serif 200px + amber 渐变高亮（核心字 1-3 个）
-- **epilogue** — closing 余韵：italic 26px Serif + `—` 红色破折号前缀
+- **kicker** - 站点序号 + 类型小字：Mono uppercase 13px + 黑底白字 num 方块 + 36px 短横线
+- **drop-cap** - body 首字：`::first-letter` float left, 96px Serif
+- **lead** - feature 引言：italic 23px Serif + 红色左边线 2px
+- **pull-quote** - hero 关键句：italic 38px Serif + 蓝色边线 4px + 浮动 `\201C` 大引号 100px
+- **strike** - failed body 删除关键词：`text-decoration: line-through` 红色 2.5px
+- **scribble** - note 红笔批注：Caveat 24px + 6deg 旋转 + 红色 + 虚线红边框
+- **stamp** - archive 失败印章：黑底白字 12px Mono + ✕ Serif 64px
+- **verdict** - archive 结案语：italic 19px Serif 红色 + 上虚线分隔
+- **footnote** - note 脚注：Mono 13px + ¹ 上标
+- **byline** - closing 出处：Mono 14px uppercase + letter-spacing 0.18em + 上下细黑线
+- **mega** - cross 转折爆点：Serif 200px + amber 渐变高亮（核心字 1-3 个）
+- **epilogue** - closing 余韵：italic 26px Serif + `—` 红色破折号前缀
 
-【sidekick 涂鸦区 — note 模具左栏不能空】
+【sidekick 涂鸦区 - note 模具左栏不能空】
 
 三种填法（按内容选, 不要堆满）：
-- **SVG 速写** — 失败本质能用 1-2 个图形姿态画出来 → `<svg viewBox="0 0 280 220">` 简笔画 + 红笔批注
-- **手写公式** (`.formula`) — 失败本质能压成 1-3 行文字关系 → Caveat 22px + 虚线左边线 + 微旋 -1deg
-- **箭头评注** (`.arrow`) — 单点强调 → Caveat 26px + 微旋 6deg + 红色
+- **SVG 速写** - 失败本质能用 1-2 个图形姿态画出来 → `<svg viewBox="0 0 280 220">` 简笔画 + 红笔批注
+- **手写公式** (`.formula`) - 失败本质能压成 1-3 行文字关系 → Caveat 22px + 虚线左边线 + 微旋 -1deg
+- **箭头评注** (`.arrow`) - 单点强调 → Caveat 26px + 微旋 6deg + 红色
 
 **约束**：sidekick 是注脚不抢戏 / 涂鸦感优先精致（歪斜、虚线、留缝隙）/ 颜色克制（黑灰 + 红）/ 内容密度低（宁可少不要塞三个图）。
 
@@ -184,7 +184,7 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 
 | section | padding 上 / 下 | margin-top | 留白尺度 |
 |---|---|---|---|
-| feature | 38 / 44 | — | 中 |
+| feature | 38 / 44 | - | 中 |
 | note | 22 / 22 | 24 | 小 |
 | archive | 22 / 24 | 24 | 小 |
 | cross | 64 / 60 | 30 | 大 |
@@ -197,7 +197,7 @@ example_source_label: "lijigang/ljg-skills · ljg-card"
 
 输出**单文件 HTML**, inline CSS + Google Fonts CDN（Noto Serif SC / Noto Sans SC / Caveat / JetBrains Mono）。不写 JS, 静态长图。容器宽 1080px, 高度自适应。
 
-【自检 6 项 — 任一不过, 重做】
+【自检 6 项 - 任一不过, 重做】
 
 1. **问题站**: 标题没出现概念名 / 问题具体可触摸 / "他/她那一刻"视角
 2. **失败站**: 至少 1 次失败 / 失败有线索（删除线 / verdict / footnote）

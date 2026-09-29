@@ -19,9 +19,9 @@ example_source_label: "lijigang/ljg-skills · ljg-present"
 
 【模板: 宣言式演讲（Outline-Faithful）】
 
-【意图】把用户的 outline / markdown 1:1 视觉化为色块大字 manifesto deck。**不抽提、不重写、不重排、不浓缩**——只决定每一行/每一节渲染为哪一页。审美参考：Felipe Franco / BIG STUDIOS 的 manifesto 大字海报。
+【意图】把用户的 outline / markdown 1:1 视觉化为色块大字 manifesto deck。**不抽提、不重写、不重排、不浓缩**--只决定每一行/每一节渲染为哪一页。审美参考：Felipe Franco / BIG STUDIOS 的 manifesto 大字海报。
 
-【铁律 — 全部违反必须重做】
+【铁律 - 全部违反必须重做】
 - 标题不改字, 段落不改字, 列表不改字, 顺序不重排
 - 唯一允许的"动"是**物理分页**（一段太长拆成多页）
 - 不抽 manifesto / 不写新句子 / 不删内容 / 不放图片图标 / 不用过渡动画
@@ -47,7 +47,7 @@ example_source_label: "lijigang/ljg-skills · ljg-present"
 
 **首末页自动 emphasis**：文档首段（如已是 `#` 则合并）+ 文档末段 = emphasis 开场 / 收束页。一级标题就是天然的章节断点, 不要为了凑节奏强行加 emphasis。
 
-【主题色推断 — 一篇只能一个】
+【主题色推断 - 一篇只能一个】
 
 | 文档调性 / 标签 | theme | 默认页 | emphasis 页 | hl 色（仅 theme 页生效） |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@ example_source_label: "lijigang/ljg-skills · ljg-present"
 
 显式覆盖：用户写"用 red / 用 yellow / 用黑底"即按指令。无任何线索时默认 black。
 
-【视觉规范 — 数值锁死】
+【视觉规范 - 数值锁死】
 
 色板（仅 4 色, 不许改 hex）：
 ```
@@ -177,7 +177,7 @@ SLIDES 数组每项形态：
   const pager = document.getElementById('pager');
   const body = document.body;
   function lineCharLen(chunks) {
-    const CJK = /[　-〿㐀-䶿一-鿿豈-﫿＀-￯]/;
+    const CJK = /[ -〿㐀-䶿一-鿿豈-﫿＀-￯]/;
     return chunks.reduce((acc, c) => {
       let len = 0;
       for (const ch of (c.t || '')) len += CJK.test(ch) ? 1.8 : 1;
@@ -260,7 +260,7 @@ SLIDES 数组每项形态：
 </html>
 ```
 
-【调用流程 — agent 内部】
+【调用流程 - agent 内部】
 1. 读用户内容（markdown / outline / 纯文本）
 2. 按上面表格做 **outline → slides 数组** 映射, 不抽提不重写
 3. 推断 theme（标签 > 语气 > 默认 black）
@@ -274,7 +274,7 @@ SLIDES 数组每项形态：
 - 列表错位靠 indent 0/1/2 体现嵌套深度
 - `**强调**` 自动 hl
 - 拆页保持视觉一致性（同源块字号/缩进对齐）
-- 左对齐不居中——这是 manifesto 美学的灵魂
+- 左对齐不居中--这是 manifesto 美学的灵魂
 
 【禁区】
 - 不抽 manifesto（不要"找钉子", 作者已经写好了 outline）

@@ -40,7 +40,7 @@ example_desc: "把产品、销售、财务反馈压缩成一页高管可拍板 m
 - 使用强层级: 大号结论、紧凑证据卡、对比表、状态 pill。
 - 不要做成长文章; 不要做成 deck; 不要写空泛商业黑话。
 
-【可选风格模板 — 参考 assets/】
+【可选风格模板 - 参考 assets/】
 根据决策场景选择一种, 不要三种混用:
 - `assets/board-memo.html`: 默认风格。浅色高管 memo, 适合 CEO/CFO/CRO、运营、产品决策。
 - `assets/decision-command.html`: 深色 command center, 适合紧急决策、风险处置、incident、go/no-go、launch gate。

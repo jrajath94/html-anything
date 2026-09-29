@@ -29,15 +29,15 @@ example_source_label: "1weiho/open-slide"
 - 边距 padding: 96 / 128 / 160 三档之一。
 - 每页有 `<section class="slide" data-slide-id="<n>">`。
 
-【调色板 — 每个 deck 选 1 套, 全程不改】
-- 🌫 **Ash & Lime** — bg `#f1efea`, ink `#161616`, accent `#c5e803`。
-- 🌌 **Sea Indigo** — bg `#0a0e1a`, ink `#f5f5f7`, accent `#5ac8fa`。
-- 🧉 **Mate Mocha** — bg `#1a1411`, ink `#f5e9d6`, accent `#d97757`。
-- 🌸 **Pearl Rose** — bg `#fdf6f3`, ink `#1a1015`, accent `#ff5d8f`。
+【调色板 - 每个 deck 选 1 套, 全程不改】
+- 🌫 **Ash & Lime** - bg `#f1efea`, ink `#161616`, accent `#c5e803`。
+- 🌌 **Sea Indigo** - bg `#0a0e1a`, ink `#f5f5f7`, accent `#5ac8fa`。
+- 🧉 **Mate Mocha** - bg `#1a1411`, ink `#f5e9d6`, accent `#d97757`。
+- 🌸 **Pearl Rose** - bg `#fdf6f3`, ink `#1a1015`, accent `#ff5d8f`。
 
-【布局自由度 — 这是核心】
+【布局自由度 - 这是核心】
 - 不强制模板, 每页根据**内容性质**自选布局: cover / question / quote / image-text / 三列 / 五列 / 列表 / 数据卡 / 满版图。
-- 但每页**必须遵守一条规则**: 视觉重心 (visual hierarchy) 只有 1 个 — 一句金句、一个数字、一张图, 不要"什么都强调"。
+- 但每页**必须遵守一条规则**: 视觉重心 (visual hierarchy) 只有 1 个 - 一句金句、一个数字、一张图, 不要"什么都强调"。
 - 不许塞两段平等的文字; 真要并列就上 3 列等权重网格。
 
 【字体】

@@ -84,20 +84,20 @@ open output.html
 
 ## 命令详解
 
-### `convert` / `auto` — 转换内容
+### `convert` / `auto` - 转换内容
 
 两个命令共享以下通用参数：
 
 | 参数 | 简写 | 说明 | 默认值 |
 |------|------|------|--------|
-| `input` | — | 输入文件路径，省略则从 stdin 读取 | stdin |
+| `input` | - | 输入文件路径，省略则从 stdin 读取 | stdin |
 | `--agent <id>` | `-a` | AI agent ID | 自动检测第一个可用 agent |
 | `--output <path>` | `-o` | 输出文件路径 | 自动保存为 `<输入文件名>.html`，stdin 输入时输出到 stdout |
 | `--output-dir <dir>` | `-d` | 自动保存目录 | 当前目录 |
-| `--model <id>` | — | 使用的模型 | agent 默认模型 |
-| `--format <type>` | — | 输入格式：markdown, text, csv, json | markdown |
+| `--model <id>` | - | 使用的模型 | agent 默认模型 |
+| `--format <type>` | - | 输入格式：markdown, text, csv, json | markdown |
 
-#### `convert` — 指定模板转换
+#### `convert` - 指定模板转换
 
 ```bash
 html-anything convert [input] [options]
@@ -109,7 +109,7 @@ html-anything convert [input] [options]
 |------|------|------|--------|
 | `--template <id>` | `-t` | 模板 ID | 配置中的 default-template |
 
-#### `auto` — 自动匹配模板并转换
+#### `auto` - 自动匹配模板并转换
 
 ```bash
 html-anything auto [input] [options]
@@ -119,10 +119,10 @@ html-anything auto [input] [options]
 
 | 参数 | 简写 | 说明 | 默认值 |
 |------|------|------|--------|
-| `--force-ai` | — | 跳过关键词匹配，强制使用 AI summary | — |
-| `--show-match-only` | — | 仅显示匹配结果，不执行转换 | — |
+| `--force-ai` | - | 跳过关键词匹配，强制使用 AI summary | - |
+| `--show-match-only` | - | 仅显示匹配结果，不执行转换 | - |
 
-### `templates` — 列出模板
+### `templates` - 列出模板
 
 ```bash
 html-anything templates
@@ -130,7 +130,7 @@ html-anything templates
 
 列出所有 75 个可用模板，按类别分组显示。已设为默认的模板会标记 `(default)`。
 
-### `agents` — 列出 Agent
+### `agents` - 列出 Agent
 
 ```bash
 html-anything agents
@@ -138,7 +138,7 @@ html-anything agents
 
 列出系统中已安装的 AI agent CLI。`✓` 表示可用，`✗` 表示未安装。
 
-### `config` — 配置管理
+### `config` - 配置管理
 
 ```bash
 html-anything config                          # 查看当前配置

@@ -50,7 +50,7 @@ example_source_label: "baoyu-skills · infographic/funnel"
 - 阶段之间有 4-8px gap, 让"流动"感更明显
 - 数字用 `font-variant-numeric: tabular-nums`, letter-spacing `-0.02em`
 
-【主题色 — 三选一, 不许混】
+【主题色 - 三选一, 不许混】
 
 | 主题 | 适用 | 顶端 | 底端 | ink | paper |
 |---|---|---|---|---|---|
@@ -74,7 +74,7 @@ example_source_label: "baoyu-skills · infographic/funnel"
 "SF Mono", "JetBrains Mono", "Menlo", "Roboto Mono", monospace
 ```
 
-**禁用 Inter** —— 它太"AI 默认味"。优先 PingFang SC（CJK）+ Helvetica Neue（拉丁）。
+**禁用 Inter** -- 它太"AI 默认味"。优先 PingFang SC（CJK）+ Helvetica Neue（拉丁）。
 
 【字号 / 间距锁死】
 
@@ -95,7 +95,7 @@ example_source_label: "baoyu-skills · infographic/funnel"
 
 输出**单文件 HTML**, inline CSS, **不写 JS**（静态图）。**不外链 CDN / 图标库 / 字体文件**。
 - 不放图标 / 不用 emoji 装饰（漏斗本身就是图）
-- 不放图表（饼图 / 柱状图）—— 一篇一个漏斗
+- 不放图表（饼图 / 柱状图）-- 一篇一个漏斗
 - 不放公司 logo
 - background 是 paper, 整张图占满 viewport
 - 用 `aspect-ratio: 9 / 16` 锁定容器, 内容用 flex column 填充
@@ -143,7 +143,7 @@ clip-path: polygon(
 - 不要在漏斗段内画图标 / 插画
 - 不要把数字放在段右、名字放在左（要左数字 / 右名字, 形成视觉重力）
 - 不要让段高度跟数值挂钩（这是 funnel 不是 H-bar chart, 信息密度靠宽度收缩传达）
-- 不要让漏斗居中悬浮——它该填满中段, 顶部贴 Hero, 底部贴 strip
+- 不要让漏斗居中悬浮--它该填满中段, 顶部贴 Hero, 底部贴 strip
 - 不要超过 6 阶（信息过载, 拆成两张图）
 - 不要 3D / 阴影 / 发光（platine 干净版式）
 - 不要 Inter 字体（见上）

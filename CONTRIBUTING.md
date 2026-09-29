@@ -1,6 +1,6 @@
 # Contributing to HTML Anything
 
-Thanks for thinking about contributing. HTML Anything is small on purpose — most of the value lives in **files** (skill folders, prompt fragments, agent adapters) rather than framework code. The highest-leverage contributions are usually one folder, one Markdown file, or a ten-line adapter.
+Thanks for thinking about contributing. HTML Anything is small on purpose - most of the value lives in **files** (skill folders, prompt fragments, agent adapters) rather than framework code. The highest-leverage contributions are usually one folder, one Markdown file, or a ten-line adapter.
 
 This guide tells you exactly where to look for each type of contribution and what bar a PR has to clear before we merge.
 
@@ -32,11 +32,11 @@ pnpm dev                  # next dev — http://localhost:3000
 pnpm build                # next build, when verifying a release-shaped bundle
 ```
 
-Node `~20` and `pnpm` are required. macOS, Linux, and WSL2 are the primary paths. Native Windows should work but isn't a primary target — file an issue if it doesn't.
+Node `~20` and `pnpm` are required. macOS, Linux, and WSL2 are the primary paths. Native Windows should work but isn't a primary target - file an issue if it doesn't.
 
 Before you push, make sure you have **at least one coding-agent CLI logged in** (`claude login`, `cursor login`, `gemini auth`, etc.) so you can actually run an end-to-end generation. PRs that touch the streaming or agent layer are expected to include a screenshot or log snippet showing it worked.
 
-> **A note on this project.** It is a normal Next.js 16 App Router app — no daemon, no Electron shell, no extra processes. Everything happens in `next dev`: server routes spawn the local CLI, stream stdout back as SSE, and the browser appends into an iframe `srcdoc`. If you find yourself wanting to introduce a separate long-running process, please open a discussion first.
+> **A note on this project.** It is a normal Next.js 16 App Router app - no daemon, no Electron shell, no extra processes. Everything happens in `next dev`: server routes spawn the local CLI, stream stdout back as SSE, and the browser appends into an iframe `srcdoc`. If you find yourself wanting to introduce a separate long-running process, please open a discussion first.
 
 ---
 
@@ -99,19 +99,19 @@ example_prompt: |
 
 ### Bar for merging a new skill
 
-1. **Real `example.html` ships in the folder.** Hand-author it once — the agent has a target to copy. PRs without one get bounced.
+1. **Real `example.html` ships in the folder.** Hand-author it once - the agent has a target to copy. PRs without one get bounced.
 2. **The example renders in the browser** (`pnpm dev` → pick the skill → ⌘+Enter → screenshot). Attach the screenshot to the PR.
 3. **Hard constraints exist and are specific.** Vague directives ("use modern typography") are not constraints. Real ones look like "Inter 96 / 64 / 40 / 24 / 16 px, 8 px grid, max two weights per slide".
 4. **No `lorem ipsum`** anywhere in the example. If the example uses placeholder data, it must be plausibly-real placeholder data.
-5. **Slug uses ASCII lowercase with dashes** — `deck-swiss-international`, `social-x-post-card`. Mirror the 75 existing folders.
+5. **Slug uses ASCII lowercase with dashes** - `deck-swiss-international`, `social-x-post-card`. Mirror the 75 existing folders.
 6. **If you vendored work from another repo**, the original `LICENSE` and authorship attribution have to ship inside your skill folder. Example: `next/src/lib/templates/skills/deck-guizang-editorial/LICENSE` preserves the original op7418 license verbatim.
 
 ### Picker grouping
 
-The picker organizes skills along two axes. Pick values that already exist where possible — only introduce a new value if your skill genuinely doesn't fit:
+The picker organizes skills along two axes. Pick values that already exist where possible - only introduce a new value if your skill genuinely doesn't fit:
 
-- **`mode`** — `prototype` · `deck` · `frame` · `social` · `office` · `doc` · `mockup` · `vfx`.
-- **`scenario`** — `design` · `marketing` · `engineering` · `product` · `finance` · `hr` · `sales` · `personal` · `operations` · `education` · `creator` · `video`.
+- **`mode`** - `prototype` · `deck` · `frame` · `social` · `office` · `doc` · `mockup` · `vfx`.
+- **`scenario`** - `design` · `marketing` · `engineering` · `product` · `finance` · `hr` · `sales` · `personal` · `operations` · `education` · `creator` · `video`.
 
 ---
 
@@ -140,7 +140,7 @@ That's it. `/api/agents` will detect it on `PATH`, the top-bar picker shows it, 
 1. **A real session works end-to-end.** Run `pnpm dev`, pick your agent, generate any skill's `example_prompt`, and paste the SSE log into the PR description showing it streamed an artifact through.
 2. **`PATH` detection works on macOS, Linux, and WSL.** The scanner already includes `~/.local/bin` · `~/.bun/bin` · `/opt/homebrew/bin` · `~/.npm-global/bin`; if your CLI lives somewhere else, add the dir to the scan list.
 3. **The README's "Supported coding agents" table gets one row** in both `README.md` and `README.zh-CN.md`.
-4. **Stream parser is reusable.** If the CLI emits the same JSON-line shape as another adapter, share the parser — don't fork.
+4. **Stream parser is reusable.** If the CLI emits the same JSON-line shape as another adapter, share the parser - don't fork.
 
 ---
 
@@ -160,7 +160,7 @@ Export targets live in two places: a helper under `next/src/lib/export/` that pr
 
 We're not pedantic about formatting (Prettier on save is fine), but two rules are non-negotiable because they show up in the prompt stack and the user-facing API:
 
-1. **Single quotes in TS/TSX.** Strings are single-quoted unless escaping makes them ugly. The codebase is already consistent — please match.
+1. **Single quotes in TS/TSX.** Strings are single-quoted unless escaping makes them ugly. The codebase is already consistent - please match.
 2. **Comments in English.** Even if the PR is translating something into 中文, code comments stay in English so we can keep one set of greppable references.
 
 Beyond that:
@@ -192,7 +192,7 @@ Open an issue with:
 - What you ran (the exact `pnpm dev` invocation, or which UI button you clicked).
 - Which agent CLI was selected (Claude Code? Cursor Agent? …).
 - The skill that triggered it.
-- The relevant **server log tail** — most "the artifact never rendered" reports get diagnosed in 30 seconds when we can see `spawn ENOENT` or the CLI's actual error.
+- The relevant **server log tail** - most "the artifact never rendered" reports get diagnosed in 30 seconds when we can see `spawn ENOENT` or the CLI's actual error.
 - A screenshot if it's UI.
 
 For prompt-stack bugs ("the agent emitted a purple gradient hero, the constraint in `SKILL.md` was supposed to forbid that"), include the **full assistant message** so we can see whether the violation was the model or the prompt.
@@ -201,7 +201,7 @@ For prompt-stack bugs ("the agent emitted a purple gradient hero, the constraint
 
 ## Asking questions
 
-- Architecture question, design question, "is this a bug or a misuse" → [GitHub Discussions](https://github.com/nexu-io/html-anything/discussions) (preferred — searchable for the next person).
+- Architecture question, design question, "is this a bug or a misuse" → [GitHub Discussions](https://github.com/nexu-io/html-anything/discussions) (preferred - searchable for the next person).
 - "How do I write a skill that does X" → open a discussion. We'll answer it and turn the answer into an entry in this guide if the pattern is missing.
 
 ---
@@ -227,7 +227,7 @@ The repo ships two languages at parity: English (`README.md`, `CONTRIBUTING.md`)
 
 - Update **both** READMEs' tables.
 - Update **both** CONTRIBUTING docs if your change introduces a new contribution surface or a new bar a PR has to clear.
-- **Skill prompt bodies stay in their source language.** Don't translate `SKILL.md` — it's part of the prompt stack the agent reads, and keeping one source language avoids multiplying prompt QA across locales.
+- **Skill prompt bodies stay in their source language.** Don't translate `SKILL.md` - it's part of the prompt stack the agent reads, and keeping one source language avoids multiplying prompt QA across locales.
 - Daemon error messages, file names, and agent-generated artifact text are known limitations unless a PR explicitly scopes them.
 
 ---
@@ -236,6 +236,6 @@ The repo ships two languages at parity: English (`README.md`, `CONTRIBUTING.md`)
 
 By contributing, you agree your contribution is licensed under the [Apache-2.0 License](LICENSE) of this repository.
 
-Vendored work retains its original license and authorship attribution — see each `next/src/lib/templates/skills/<skill>/` folder's own `LICENSE` / `README.md` for what it inherits from upstream. The most prominent example is [`next/src/lib/templates/skills/deck-guizang-editorial/`](next/src/lib/templates/skills/deck-guizang-editorial/), which retains the original license and authorship attribution to [op7418](https://github.com/op7418).
+Vendored work retains its original license and authorship attribution - see each `next/src/lib/templates/skills/<skill>/` folder's own `LICENSE` / `README.md` for what it inherits from upstream. The most prominent example is [`next/src/lib/templates/skills/deck-guizang-editorial/`](next/src/lib/templates/skills/deck-guizang-editorial/), which retains the original license and authorship attribution to [op7418](https://github.com/op7418).
 
 [skill]: https://docs.anthropic.com/en/docs/claude-code/skills

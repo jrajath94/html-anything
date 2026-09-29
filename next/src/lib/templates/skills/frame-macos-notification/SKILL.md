@@ -27,14 +27,14 @@ example_source_label: "hyperframes · macos-notification"
 
 【横幅结构】
 - 外框: 圆角 14px (macOS Big Sur 标准), 480×120 (或更长 480×180 含正文), 12-16px 内边距。
-- 背景: **frosted glass** 效果 — `background: rgba(245,245,247,0.78)` + `backdrop-filter: blur(40px) saturate(180%)`; 暗色版 `rgba(28,28,30,0.78)`。
+- 背景: **frosted glass** 效果 - `background: rgba(245,245,247,0.78)` + `backdrop-filter: blur(40px) saturate(180%)`; 暗色版 `rgba(28,28,30,0.78)`。
 - 边框: 1px `rgba(0,0,0,0.06)` (light) / `rgba(255,255,255,0.08)` (dark); 顶部加 1px 亮 highlight `rgba(255,255,255,0.5)`。
 - 阴影: `0 10px 40px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.08)`。
 
 【内容】
 - 左侧: **App icon** (44×44, 圆角 10px, CSS gradient + 1 个 emoji 或 monogram 字母, **不用外链图片**)。
 - 中间:
-  - 顶部 row: App 名 (SF Pro 13px, weight 600) + `now` 或具体时间 (12px, opacity 0.6) — 两端对齐。
+  - 顶部 row: App 名 (SF Pro 13px, weight 600) + `now` 或具体时间 (12px, opacity 0.6) - 两端对齐。
   - 标题 (15px, weight 600, 1 行截断)。
   - 正文 (13px, weight 400, 1-2 行截断, line-height 1.35)。
 - 右侧 (可选): action button "Open" 或 "Reply" (capsule, 浅灰底)。

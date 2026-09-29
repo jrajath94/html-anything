@@ -402,7 +402,7 @@ function ModelPicker({
   const models = agent.models.length
     ? agent.models
     : [{ id: "default", label: t("model.defaultLabel") }];
-  const MARK = "​";
+  const MARK = "";
   const [before, after = ""] = t("model.label", { agent: MARK }).split(MARK);
   return (
     <div
